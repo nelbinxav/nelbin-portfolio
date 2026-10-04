@@ -1,6 +1,6 @@
 /**
  * What I can do (capabilities, not claims about past results).
- * "core" = routine, defensible work. "also" = worked with, at lighter depth.
+ * "core" = routine, defensible work. "also" = also able to: lighter depth, or adjacent work I can pick up fast.
  * Sourced from the career knowledge base and the owner's own stack list.
  */
 export interface Lane {
@@ -30,7 +30,7 @@ export const lanes: Lane[] = [
       "Campaign testing, analytics and optimization",
       "Sending-domain setup, landing pages and calendar booking flows",
     ],
-    also: ["WhatsApp and SMS outreach", "Instantly", "Smartlead", "Expandi", "Founder LinkedIn content", "AI-personalised video and voice outreach experiments"],
+    also: ["WhatsApp and SMS outreach", "Instantly", "Smartlead", "Expandi", "LinkedHelper", "Founder LinkedIn content", "AI-personalised video and voice outreach", "Clay enrichment", "HubSpot setups"],
   },
   {
     id: "automation",
@@ -46,7 +46,7 @@ export const lanes: Lane[] = [
       "Quota-aware, duplicate-safe automation for Google Calendar at scale",
       "Debugging failing automations and making them more reliable",
     ],
-    also: ["n8n", "Zapier", "Unipile (LinkedIn and WhatsApp)", "Slack alerts"],
+    also: ["n8n", "Zapier", "Unipile (LinkedIn and WhatsApp)", "Slack alerts", "Scheduled and queue-based job runners"],
   },
   {
     id: "development",
@@ -60,7 +60,7 @@ export const lanes: Lane[] = [
       "Next.js product work, including front-end and QA, on a team",
       "Reviewing, testing and debugging AI-written code before it ships",
     ],
-    also: ["JavaScript", "HTML and CSS", "SQL", "Git and GitHub", "Foundations from my degree: C, C++, Java, PHP"],
+    also: ["JavaScript and TypeScript services", "Full-stack Next.js apps", "SQL-backed tools", "Docker", "HTML and CSS", "Git and GitHub", "Degree foundations: C, C++, Java, PHP"],
   },
   {
     id: "ai",
@@ -75,7 +75,7 @@ export const lanes: Lane[] = [
       "AI agent orchestration",
       "AI for architecture, debugging, code review, refactoring and documentation",
     ],
-    also: ["Cursor", "Gemini", "Perplexity", "HeyGen", "Descript and Riverside for transcripts"],
+    also: ["Cursor", "Gemini", "Perplexity", "HeyGen", "Proposal and document generators", "Assistants over company documents", "Monitoring LLM workflows"],
   },
   {
     id: "data",
@@ -89,7 +89,7 @@ export const lanes: Lane[] = [
       "Google Sheets as a lightweight database and back end",
       "Reporting dashboards and internal utilities",
     ],
-    also: ["SQL", "Excel"],
+    also: ["SQL reporting layers", "Excel", "BI dashboards"],
   },
   {
     id: "infra",
@@ -103,7 +103,7 @@ export const lanes: Lane[] = [
       "Domain migration from Namecheap to Cloudflare",
       "Landing-page DNS and Cloudflare Pages",
     ],
-    also: ["Namecheap", "Proxies"],
+    also: ["Namecheap", "Proxies", "Inbox warm-up and rotation design", "Basic cloud hosting"],
   },
   {
     id: "delivery",
@@ -121,6 +121,6 @@ export const lanes: Lane[] = [
       "Explaining systems to clients on calls, and troubleshooting with them",
       "HR operations automation: attendance, leave, payroll and HR letters",
     ],
-    also: ["Figma-to-implementation", "Canva", "WordPress"],
+    also: ["Figma-to-implementation", "Canva", "WordPress", "Pre-sales demos"],
   },
 ];

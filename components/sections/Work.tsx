@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { categories, systems } from "@/content/systems";
 import { MaskText } from "@/components/motion/MaskText";
-import { OwnershipTag } from "@/components/ui/OwnershipTag";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { GlowBlob } from "@/components/ui/GlowBlob";
 import { Arrow } from "@/components/ui/Arrow";
@@ -21,15 +20,15 @@ function Prs({ s }: { s: (typeof systems)[number] }) {
   return (
     <dl className="grid gap-5 text-[0.95rem]">
       <div>
-        <dt className="label">Problem</dt>
+        <dt className="label">The need</dt>
         <dd className="mt-1.5 text-[var(--muted)]">{s.problem}</dd>
       </div>
       <div>
-        <dt className="label">What I did</dt>
+        <dt className="label">What I can build</dt>
         <dd className="mt-1.5">{s.did}</dd>
       </div>
       <div>
-        <dt className="label label-accent">Result</dt>
+        <dt className="label label-accent">Example</dt>
         <dd className="mt-1.5 font-medium">{s.result}</dd>
       </div>
     </dl>
@@ -48,10 +47,10 @@ export function Work() {
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="label label-accent" data-reveal>Selected work</p>
-            <MaskText as="h2" id="work-title" className="h2 mt-6" text="Business systems, not websites." emphasis={["systems,"]} />
+            <MaskText as="h2" id="work-title" className="h2 mt-6" text="Business systems I can build, not websites." emphasis={["systems"]} />
           </div>
           <p className="lead lg:col-span-5 lg:self-end" data-reveal>
-            Each one replaced a manual process with something connected and repeatable. Here is the problem, what I did, and what came out of it.
+            Each one is a manual process I can replace with something connected and repeatable. Here is the need, what I can build, and an example of what came out of it.
           </p>
         </div>
 
@@ -66,7 +65,6 @@ export function Work() {
               <div className="mt-8"><Chips items={feature.context} /></div>
               <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Link href={`/systems/${feature.caseStudy}`} className="btn btn-primary">Read the case study <Arrow /></Link>
-                <OwnershipTag level={feature.ownership} />
               </div>
             </div>
             <div className="lg:col-span-6"><Prs s={feature} /></div>
@@ -84,9 +82,6 @@ export function Work() {
                 <div className="mt-6"><Prs s={s} /></div>
                 <div className="mt-auto pt-7">
                   <Chips items={s.context} />
-                  <div className="mt-5 border-t border-[var(--line)] pt-5">
-                    <OwnershipTag level={s.ownership} note={s.ownershipNote} />
-                  </div>
                 </div>
               </TiltCard>
             </li>
@@ -101,10 +96,8 @@ export function Work() {
               <li key={s.slug} className="more-row">
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 className="font-[family-name:var(--font-display)] text-[1.35rem] leading-tight">{s.name}</h3>
-                  <OwnershipTag level={s.ownership} />
                 </div>
                 <p className="mt-2 text-[0.95rem] text-[var(--muted)]">{s.summary}</p>
-                {s.ownershipNote ? <p className="label mt-2">{s.ownershipNote}</p> : null}
               </li>
             ))}
           </ul>

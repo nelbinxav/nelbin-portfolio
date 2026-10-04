@@ -15,5 +15,5 @@ export const principles = [
   { title: "Understand the manual process first.", body: "Automating a broken process only breaks it faster." },
   { title: "Safety before scale.", body: "Dry run, then apply. Test one low-risk case before touching hundreds." },
   { title: "Document so it outlives me.", body: "READMEs and SOPs are part of the build, not an afterthought." },
-  { title: "Say what was mine and what was shared.", body: "Ownership is stated as it is, including where others built part of it." },
+  { title: "Hand it over, not just hand it in.", body: "A system is finished when the team can run it, fix it and explain it without me." },
 ];

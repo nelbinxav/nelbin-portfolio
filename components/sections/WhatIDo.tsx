@@ -18,9 +18,9 @@ export function WhatIDo() {
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <p className="label label-accent" data-reveal>What I do</p>
-            <MaskText as="h2" id="do-title" className="h2 mt-6" text="Growth marketing at the core, with the build skills to back it." emphasis={["growth", "marketing", "build"]} />
+            <MaskText as="h2" id="do-title" className="h2 mt-6" text="Systems engineering for growth, built end to end." emphasis={["systems", "engineering"]} />
             <p className="lead mt-8" data-reveal>
-              I started in growth marketing and kept building the tools growth work needed. Today that spans three areas, and they feed each other.
+              I can take a business problem from the first manual walkthrough to a tested, documented system. That spans three areas, and they feed each other.
             </p>
           </div>
           <div className="lg:col-span-6" data-reveal>
@@ -49,9 +49,9 @@ export function WhatIDo() {
         </ul>
 
         <details className="more mt-10">
-          <summary className="btn btn-quiet">Everything I work with</summary>
+          <summary className="btn btn-quiet">Everything I can do</summary>
           <p className="mt-6 max-w-[56ch] text-[var(--muted)]">
-            The full range. The main list is what I do routinely; &ldquo;Also&rdquo; is what I have worked with at lighter depth.
+            The full range. The main list is work I do routinely; &ldquo;Also&rdquo; is what I can pick up at lighter depth or with a short ramp-up.
           </p>
           <div className="mt-6">
             {lanes.map((lane) => (

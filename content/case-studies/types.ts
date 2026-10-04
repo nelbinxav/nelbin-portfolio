@@ -12,8 +12,6 @@ export interface Outcome {
   value: string;
   claim: string;
   attribution?: string;
-  ownership: OwnershipLevel;
-  ownershipNote: string;
 }
 
 export interface CaseStudy {

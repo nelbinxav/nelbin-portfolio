@@ -14,7 +14,7 @@ export const now = [
 
 export const timeline = [
   { dates: "Jul 2024 to present", title: "AI and Automation Engineer", org: "GrowthClub.org", note: "Replacing work the team repeats by hand with systems: webinars, outreach, lead data and infrastructure.", now: true },
-  { dates: "Apr 2024 to present", title: "Product Manager, Tantra", org: "GrowthClub.org", note: "Practical product and campaign involvement: testing, analytics and structured feedback. Input and ideas, not final decisions.", now: true },
+  { dates: "Apr 2024 to present", title: "Product Manager, Tantra", org: "GrowthClub.org", note: "Product and campaign work: testing, analytics and structured feedback on the product.", now: true },
   { dates: "Jun 2023 to Jul 2024", title: "Marketing Automation Executive", org: "GrowthClub.org", note: "Where it started: sourcing and cleaning leads, preparing outreach, and automating the repetitive steps." },
   { dates: "Nov 2022 to Jun 2023", title: "Customer Service Representative", org: "Landmark Group, Kochi", note: "Customer questions, orders, billing and returns across four channels. Trained other team members." },
   { dates: "May 2019 to Jan 2021", title: "IELTS Exam Invigilator (part-time)", org: "Planet EDU, Kochi", note: "Checked identities, supervised exams and prepared rooms and equipment." },

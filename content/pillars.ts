@@ -4,7 +4,7 @@ export const pillars: { icon: PillarIcon; name: string; promise: string; points:
   {
     icon: "growth",
     name: "Growth & GTM systems",
-    promise: "Turn a target audience into booked conversations.",
+    promise: "I can turn a target audience into booked conversations.",
     points: [
       "Lead sourcing, cleaning and segmentation",
       "Email and LinkedIn outreach",
@@ -16,7 +16,7 @@ export const pillars: { icon: PillarIcon; name: string; promise: string; points:
   {
     icon: "automation",
     name: "Automation & AI",
-    promise: "Replace repeated manual work with connected workflows.",
+    promise: "I can replace repeated manual work with connected workflows.",
     points: [
       "Make.com, GoHighLevel and Apps Script workflows",
       "API, webhook and OAuth integrations",
@@ -28,7 +28,7 @@ export const pillars: { icon: PillarIcon; name: string; promise: string; points:
   {
     icon: "build",
     name: "Build & infrastructure",
-    promise: "Write the code, and keep the foundations healthy.",
+    promise: "I can write the code, and keep the foundations healthy.",
     points: [
       "Python toolkits and internal tools",
       "Electron desktop apps",

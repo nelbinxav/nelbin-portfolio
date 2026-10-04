@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/content/case-studies";
-import { ownershipDefinitions } from "@/content/ownership";
 import { MaskText } from "@/components/motion/MaskText";
-import { OwnershipTag } from "@/components/ui/OwnershipTag";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { GlowBlob } from "@/components/ui/GlowBlob";
 import { Arrow } from "@/components/ui/Arrow";
@@ -31,7 +29,7 @@ const sections = [
   { id: "problem", label: "Problem" },
   { id: "approach", label: "Approach" },
   { id: "architecture", label: "Architecture" },
-  { id: "ownership", label: "My ownership" },
+  { id: "capability", label: "What I can do" },
   { id: "technologies", label: "Technologies" },
   { id: "results", label: "Results" },
 ];
@@ -128,34 +126,17 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Ownership */}
-      <section id="ownership" className="tone-deep section">
+      <section id="capability" className="tone-deep section">
         <div className="wrap grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="label label-accent" data-reveal>04 · My ownership</p>
-            <MaskText as="h2" className="h2 mt-6" text="What was mine, and what was not." emphasis={["mine,"]} />
-            <div className="mt-8" data-reveal>
-              <OwnershipTag level={o.level} />
-              <p className="mt-3 max-w-[34ch] text-[0.95rem] text-[var(--muted)]">
-                <strong className="font-medium text-[var(--fg)]">{o.level}.</strong> {ownershipDefinitions[o.level]}
-              </p>
-            </div>
+            <p className="label label-accent" data-reveal>04 · What I can do</p>
+            <MaskText as="h2" className="h2 mt-6" text="What I can build for you." emphasis={["build"]} />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="lead !text-[var(--fg)]" data-reveal>{o.statement}</p>
-            <div className="mt-12 grid gap-10 sm:grid-cols-2">
-              <div data-reveal>
-                <h3 className="label label-accent">I did</h3>
-                <ul className="mt-4">
-                  {o.did.map((d) => <li key={d} className="border-t border-[var(--line)] py-3 text-[0.97rem]">{d}</li>)}
-                </ul>
-              </div>
-              <div data-reveal>
-                <h3 className="label">I did not</h3>
-                <ul className="mt-4">
-                  {o.didNot.map((d) => <li key={d} className="border-t border-[var(--line)] py-3 text-[0.97rem] text-[var(--muted)]">{d}</li>)}
-                </ul>
-              </div>
-            </div>
+            <ul className="mt-12" data-reveal>
+              {o.did.map((d) => <li key={d} className="border-t border-[var(--line)] py-3 text-[0.97rem]">{d}</li>)}
+            </ul>
           </div>
         </div>
       </section>
@@ -198,11 +179,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                     </p>
                     <p className="mt-5 text-[1.1rem] leading-snug">{r.claim}</p>
                     {r.attribution ? <p className="label mt-4">{r.attribution}</p> : null}
-                    <div className="mt-auto pt-10">
-                      <div className="border-t border-[var(--line)] pt-6">
-                        <OwnershipTag level={r.ownership} note={r.ownershipNote} />
-                      </div>
-                    </div>
                   </TiltCard>
                 </li>
               );

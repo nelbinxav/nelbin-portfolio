@@ -42,7 +42,7 @@ export const metrics: Metric[] = [
     suffix: "+",
     label: "Client webinar systems implemented",
     measures:
-      "Webinar programs I implemented systems for. The scope and depth of my part varied from client to client.",
+      "Client webinar programs I have set up systems for, from registration through to CRM follow-up.",
     scope: "Across clients",
   },
   {

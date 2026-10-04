@@ -13,11 +13,11 @@ export const site = {
   org: "GrowthClub.org",
   positioning:
     "I build systems that turn repetitive business operations into automated, connected infrastructure.",
-  /** Growth-first framing shown under the hero headline. */
+  /** Shown under the hero headline: where the work happens, not another positioning line. */
   growthLine:
-    "Growth marketing at the core. I build the automation, integrations and code that growth work needs.",
+    "From lead generation and CRM workflows to AI systems and infrastructure, I turn fragmented processes into connected workflows.",
   description:
-    "Nelbin Joseph is an AI automation and systems engineer with a growth marketing background. He builds connected systems for webinars, outreach, lead data, infrastructure and internal operations.",
+    "Nelbin Joseph is an AI automation and systems engineer. He can build connected systems for webinars, outreach, lead data, infrastructure and internal operations.",
   /** Public URL on GitHub Pages. Change this if you later add a custom domain. */
   url: "https://nelbinxav.github.io/nelbin-portfolio",
   location: "Bengaluru, India",
@@ -27,7 +27,7 @@ export const site = {
     { label: "Work", href: "/#work", enabled: true },
     { label: "What I do", href: "/#services", enabled: true },
     { label: "Process", href: "/#process", enabled: true },
-    { label: "Journey", href: "/#journey", enabled: true },
+    { label: "About", href: "/#journey", enabled: true },
     { label: "Contact", href: "#contact", enabled: true },
   ],
 } as const;

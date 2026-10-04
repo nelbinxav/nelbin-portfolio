@@ -55,16 +55,14 @@ export const webinarAutomation: CaseStudy = {
   ownership: {
     level: "Implemented",
     statement:
-      "I designed and implemented the majority of the technical and operational setup. On the major funnel that was about 90% of the implementation. Business strategy and overall direction came from leadership.",
+      "This is the kind of system I can design and build end to end: the automation and integrations between the tools, and the operational setup that keeps webinars running.",
     did: [
-      "Designed and built the automation and integrations between the tools",
-      "Handled the operational setup that kept webinars running",
-      "Tested the flow and documented how it works",
+      "Design and build the automation and integrations between the tools",
+      "Set up the operations that keep a monthly webinar running",
+      "Test the whole flow and document how it works",
+      "Train the team to run it and fix it themselves",
     ],
-    didNot: [
-      "Set the business strategy or overall direction",
-      "Implement every part of every webinar program alone",
-    ],
+    didNot: [],
   },
   technologies: [
     { group: "Sourcing & outreach", items: ["Apollo", "LinkedIn"] },
@@ -82,22 +80,16 @@ export const webinarAutomation: CaseStudy = {
         value: "25+",
         claim: "qualified sales calls by the fourth webinar",
         attribution: "Directly attributed to the webinars",
-        ownership: "Implemented",
-        ownershipNote: "About 90% of the implementation on this funnel",
       },
       {
         client: "Sales training / consulting client",
         value: "6",
         claim: "qualified sales calls from the first webinar",
-        ownership: "Contributed",
-        ownershipNote: "Helped implement it, alongside others",
       },
       {
         client: "UK fintech education network",
         value: "40+",
         claim: "paid customers through webinar-led programs, most of them via webinars",
-        ownership: "Contributed",
-        ownershipNote: "Supported the webinar systems",
       },
     ],
   },

@@ -33,26 +33,26 @@ export const systems: System[] = [
   {
     slug: "ai-content-engine",
     tier: "card",
-    problem: "Producing social content meant researching topics, drafting and scheduling posts by hand.",
-    did: "Implemented the engine: research, three drafts per topic, human review, scheduling and publishing.",
+    problem: "Producing social content means researching topics, drafting and scheduling posts by hand.",
+    did: "I can build the engine: research, three drafts per topic, human review, scheduling and publishing.",
     result: "Three drafts per topic, and nothing goes live without a person approving it.",
     name: "AI Content Engine",
     category: "ai",
     summary:
-      "Researches topics, drafts three versions of a post and schedules the one a person approves. Nothing goes live without a human sign-off.",
+      "I can build content engines that research topics, draft three versions of a post and schedule the one a person approves. Nothing goes live without a human sign-off.",
     context: ["LLM workflows", "News + RSS research", "Cernio publishing"],
     ownership: "Implemented",
   },
   {
     slug: "webinar-automation",
     tier: "feature",
-    problem: "Webinar campaigns ran across disconnected tools, and people moved data between them by hand.",
-    did: "Implemented about 90% of the major funnel: lead cleaning, outreach, registration, reminders, attendance and CRM follow-up.",
+    problem: "Webinar campaigns run across disconnected tools, and people move data between them by hand.",
+    did: "I can connect the whole funnel: lead cleaning, outreach, registration, reminders, attendance and CRM follow-up.",
     result: "25+ qualified sales calls by the fourth webinar, for a UK growth consultancy.",
     name: "Webinar Automation System",
     category: "gtm",
     summary:
-      "Connects lead sourcing, registration, reminders and CRM follow-up, so a webinar runs as one system instead of a dozen manual steps.",
+      "I can connect lead sourcing, registration, reminders and CRM follow-up, so a webinar runs as one system instead of a dozen manual steps.",
     context: ["Make.com · n8n", "GoHighLevel", "WebinarGeek"],
     ownership: "Implemented",
     caseStudy: "webinar-automation",
@@ -63,33 +63,32 @@ export const systems: System[] = [
     name: "Multi-Channel Outreach Engine",
     category: "gtm",
     summary:
-      "Runs one campaign across LinkedIn, WhatsApp and email from a single prospect list.",
+      "I can run one campaign across LinkedIn, WhatsApp and email from a single prospect list.",
     context: ["Unipile", "Email APIs", "In end-to-end testing"],
     ownership: "Led",
-    ownershipNote: "With another developer",
   },
   {
     slug: "lead-processing",
     tier: "card",
     problem: "Raw vendor lead lists are messy, duplicated and not yet qualified for a campaign.",
-    did: "Built the automated workflow that cleans, validates, segments and qualifies records against defined criteria.",
+    did: "I can build the workflow that cleans, validates, segments and qualifies records against defined criteria.",
     result: "500K+ records cleaned in minutes, under defined criteria.",
     name: "Large-Scale Lead Processing",
     category: "infra",
-    summary: "Turns a raw lead list into a qualified, campaign-ready dataset.",
+    summary: "I can turn a raw lead list into a qualified, campaign-ready dataset.",
     context: ["Python", "CSV · Sheets", "ICP criteria"],
     ownership: "Implemented",
   },
   {
     slug: "cloudflare-toolkit",
     tier: "card",
-    problem: "DNS and email authentication for hundreds of domains meant slow, risky manual edits.",
-    did: "Built a 14-script Python toolkit, driven by CSV, with a dry run before any change is applied.",
+    problem: "DNS and email authentication for hundreds of domains means slow, risky manual edits.",
+    did: "I can build script toolkits, driven by a CSV, with a dry run before any change is applied.",
     result: "300+ domains managed with scripts instead of by hand.",
     name: "Cloudflare Infrastructure Toolkit",
     category: "infra",
     summary:
-      "Audits and updates DNS and email-authentication records across hundreds of domains from a spreadsheet, with a dry run before anything changes.",
+      "I can audit and update DNS and email-authentication records across hundreds of domains from a spreadsheet, with a dry run before anything changes.",
     context: ["Python · 14 scripts", "Cloudflare API", "SPF · DKIM · DMARC"],
     ownership: "Built",
   },
@@ -99,10 +98,9 @@ export const systems: System[] = [
     name: "DenchClaw HR CRM",
     category: "internal",
     summary:
-      "A desktop app that handles attendance, leave, payroll calculations and HR letters, so none of it is redone by hand each month.",
+      "I can build desktop apps that handle attendance, leave, payroll calculations and HR letters, so none of it is redone by hand each month.",
     context: ["Electron desktop app", "Payroll + leave", "HR documents"],
     ownership: "Built",
-    ownershipNote: "My idea and my build",
   },
   {
     slug: "calendar-automation",
@@ -110,7 +108,7 @@ export const systems: System[] = [
     name: "Google Calendar Automation",
     category: "internal",
     summary:
-      "Sends calendar invitations from a spreadsheet and moves events between company domains, without double-booking anyone or hitting Google's limits.",
+      "I can send calendar invitations from a spreadsheet and move events between company domains, without double-booking anyone or hitting Google's limits.",
     context: ["Python · Apps Script", "Service accounts", "Dry-run audit"],
     ownership: "Built",
   },
@@ -120,10 +118,9 @@ export const systems: System[] = [
     name: "Lifecycle Nurture System",
     category: "gtm",
     summary:
-      "A 60-email nurture program in GoHighLevel: educational and customer-story journeys over 3, 5 and 7 days, with webinar attendees enrolled automatically.",
+      "I can build nurture programs in GoHighLevel: educational and customer-story journeys over 3, 5 and 7 days, with webinar attendees enrolled automatically. One program runs to 60 emails.",
     context: ["GoHighLevel", "3 / 5 / 7-day journeys", "Auto-enrollment"],
     ownership: "Implemented",
-    ownershipNote: "Took over a shared program and reworked it",
   },
   {
     slug: "lead-sourcing-filter",
@@ -131,7 +128,7 @@ export const systems: System[] = [
     name: "Lead-Sourcing Filter Automation",
     category: "gtm",
     summary:
-      "Turns a plain-English description of an audience into a ready Apollo search in about 30 seconds. That step used to take 30 to 60 minutes.",
+      "I can turn a plain-English description of an audience into a ready Apollo search in about 30 seconds, a step that usually takes 30 to 60 minutes.",
     context: ["Apollo", "Natural language", "Recurring workflow"],
     ownership: "Built",
   },
@@ -141,10 +138,9 @@ export const systems: System[] = [
     name: "LinkedIn AI SDR Automation",
     category: "ai",
     summary:
-      "Qualifies LinkedIn replies with AI, drafts the next message and alerts the team, so a person steps in only when a conversation is worth having.",
+      "I can build AI that qualifies LinkedIn replies, drafts the next message and alerts the team, so a person steps in only when a conversation is worth having.",
     context: ["Make.com · 50+ modules", "Unipile", "OpenAI"],
     ownership: "Contributed",
-    ownershipNote: "Co-built with a teammate; wrote the documentation",
   },
   {
     slug: "lead-analysis",
@@ -152,10 +148,9 @@ export const systems: System[] = [
     name: "Lead & Conversion Analysis",
     category: "infra",
     summary:
-      "Scores and tiers lead lists against a buyer persona, and traces which webinar attendees became sales conversations, so a client can see where results came from.",
+      "I can score and tier lead lists against a buyer persona, and trace which webinar attendees became sales conversations, so a client can see where results came from.",
     context: ["ICP scoring", "Persona tiers", "Webinar conversion"],
     ownership: "Built",
-    ownershipNote: "Client analyses, done on my own",
   },
   {
     slug: "course-migration",
@@ -163,10 +158,9 @@ export const systems: System[] = [
     name: "Training Course Migration",
     category: "product",
     summary:
-      "Moved a full training course from WordPress to GoHighLevel, and re-edited 40+ videos for clearer picture, sound and subtitles.",
+      "I can move a full training course from WordPress to GoHighLevel and re-edit the videos for clearer picture, sound and subtitles. One course had 40+ videos.",
     context: ["GoHighLevel", "Premiere Pro", "Descript · Riverside"],
     ownership: "Implemented",
-    ownershipNote: "Self-directed; learned the editing tools for it",
   },
   {
     slug: "tantra",
@@ -174,9 +168,8 @@ export const systems: System[] = [
     name: "Tantra (GrowthClub product)",
     category: "product",
     summary:
-      "Runs and tests client campaigns on the product, reads the analytics, finds gaps and sends structured feedback. Earlier: Figma-to-code, Next.js, and QA of sign-in, payments and APIs.",
+      "I can run and test campaigns on a product, read the analytics, find gaps and write structured feedback, plus Figma-to-code, Next.js and QA of sign-in, payments and APIs.",
     context: ["Campaign testing", "Next.js · QA", "Product feedback"],
     ownership: "Contributed",
-    ownershipNote: "Real input; not the product decision-maker",
   },
 ];
