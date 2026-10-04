@@ -1,13 +1,25 @@
-import Image from "next/image";
 import { profilePhoto } from "@/lib/photos";
 
 /** The one photo on the site. Shows a neutral frame, naming the file to add, until public/photos/profile.* exists. */
 export function PhotoFrame({ alt, aspect, sizes, priority, className = "", position = "center" }: { alt: string; aspect: string; sizes: string; priority?: boolean; className?: string; position?: string }) {
-  const src = profilePhoto();
+  const photo = profilePhoto();
   return (
     <div className={`photo ${className}`} style={{ aspectRatio: aspect }}>
-      {src ? (
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" style={{ objectPosition: position }} />
+      {photo ? (
+        // eslint-disable-next-line @next/next/no-img-element -- static export: no optimiser, so we pre-size and use srcSet
+        <img
+          src={photo.src}
+          srcSet={photo.srcSet}
+          sizes={sizes}
+          alt={alt}
+          width={800}
+          height={1067}
+          decoding="async"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: position }}
+        />
       ) : (
         <div className="photo-empty" role="img" aria-label="Placeholder for a portrait photo">
           <span className="photo-mono" aria-hidden="true">NJ</span>

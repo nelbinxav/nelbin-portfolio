@@ -24,7 +24,7 @@ npm run build && npm start   # builds the static site to ./out and serves it
 | A full case study | `content/case-studies/` |
 | What I do, process, journey | `content/pillars.ts`, `content/method.ts`, `content/experience.ts` |
 | Tools strip | `content/tools.ts` |
-| Your photo | `public/photos/profile.jpg` |
+| Your photo | `public/photos/profile.jpg`, then run `npm run photos` to regenerate the responsive sizes |
 
 Adding a case study is one data file in `content/case-studies/` plus an entry in its `index.ts`.
 

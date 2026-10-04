@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve out",
+    "photos": "node scripts/photos.mjs",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
