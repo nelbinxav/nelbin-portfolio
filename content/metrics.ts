@@ -40,7 +40,7 @@ export const metrics: Metric[] = [
     id: "webinar-systems",
     value: 9,
     suffix: "+",
-    label: "Client webinar systems implemented",
+    label: "Client webinar systems",
     measures:
       "Client webinar programs I have set up systems for, from registration through to CRM follow-up.",
     scope: "Across clients",
@@ -65,7 +65,7 @@ export interface MiniStat {
 export const miniStats: MiniStat[] = [
   { value: "1,000+", label: "Business email accounts created, organised or managed", scope: "Infrastructure" },
   { value: "14", label: "Python scripts in one Cloudflare and DNS toolkit", scope: "Cloudflare toolkit" },
-  { value: "~60", label: "Emails in a lifecycle nurture program I reworked and expanded", scope: "Nurture system" },
+  { value: "~60", label: "Emails in a lifecycle nurture program", scope: "Nurture system" },
   { value: "40+", label: "Training videos re-edited for picture, sound and subtitles", scope: "Course migration" },
   { value: "30–60 min → 30 s", label: "Setting up a lead-sourcing search, before and after automating it", scope: "One workflow" },
 ];

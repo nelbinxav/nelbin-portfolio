@@ -8,7 +8,7 @@ export function Journey() {
       <GlowBlob className="-right-1/3 top-1/4" parallax={-60} />
       <div className="wrap relative z-[1] grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-5 lg:sticky lg:top-[calc(var(--nav-h)+2rem)] lg:self-start">
-          <p className="label label-accent" data-reveal>Journey</p>
+          <p className="label label-accent" data-reveal>About</p>
           <MaskText as="h2" id="journey-title" className="h2 mt-6" text="From running the process to building the system." emphasis={["building", "system."]} />
           <div className="mt-8 space-y-4 text-[var(--muted)]" data-reveal>
             {story.map((p) => <p key={p}>{p}</p>)}

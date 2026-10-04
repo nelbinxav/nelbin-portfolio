@@ -134,6 +134,25 @@ export const tools: UniverseItem[] = [
     ["linkedin", "LinkedIn", 1, 0.6, "unipile", "outreach", "sales-navigator", "expandi"],
     ["whatsapp", "WhatsApp", 1, 0.5, "unipile", "outreach-engine"],
     ["google-calendar", "Google Calendar", 1, 0.55, "calendar-automation", "scheduling", "gohighlevel", "service-accounts"],
+    ["google-sheets", "Google Sheets", 2, 0.7, "csv", "data-pipelines", "apps-script", "lead-processing", "google-workspace"],
+    ["gemini", "Gemini", 1, 0.4, "ai-agents", "llm-workflows"],
+    ["perplexity", "Perplexity", 1, 0.4, "research", "llm-workflows"],
+    ["cursor", "Cursor", 1, 0.45, "ai-assisted-development", "claude-code"],
+    ["github", "GitHub", 1, 0.4, "python", "debugging", "technical-documentation"],
+    ["docker", "Docker", 1, 0.35, "internal-tools", "electron"],
+    ["electron", "Electron", 1, 0.5, "denchclaw-hr-crm", "internal-tools"],
+    ["figma", "Figma", 1, 0.4, "nextjs", "product-engineering"],
+    ["canva", "Canva", 1, 0.35, "content-generation"],
+    ["slack", "Slack", 1, 0.4, "ai-sdr", "webhooks"],
+    ["hubspot", "HubSpot", 1, 0.4, "crm", "crm-automation"],
+    ["clay", "Clay", 1, 0.4, "lead-sourcing", "lead-enrichment"],
+    ["calendly", "Calendly", 1, 0.35, "scheduling", "calendar-invites"],
+    ["linkedhelper", "LinkedHelper", 1, 0.35, "linkedin", "outreach"],
+    ["heygen", "HeyGen", 1, 0.3, "content-generation"],
+    ["wordpress", "WordPress", 1, 0.3, "course-migration"],
+    ["namecheap", "Namecheap", 1, 0.3, "dns", "domain-migration"],
+    ["cloudflare-pages", "Cloudflare Pages", 1, 0.35, "cloudflare", "landing-pages"],
+    ["postman", "Postman", 1, 0.3, "apis", "rest"],
   ]),
 ].map((t) =>
   t.id === "cloudflare"
@@ -162,7 +181,15 @@ export const concepts: UniverseItem[] = rows("concept", [
   ["cloudflare-api", "Cloudflare API", 1, 0.45, "cloudflare", "apis", "python"],
   ["google-workspace-apis", "Google Workspace APIs", 1, 0.45, "google-workspace", "service-accounts", "apps-script"],
   ["ai-assisted-development", "AI-assisted development", 1, 0.5, "claude-code"],
-  ["debugging", "Debugging", 1, 0.4, "claude-code"],
+  ["debugging", "Debugging", 1, 0.4, "claude-code", "github"],
+  ["domain-wide-delegation", "Domain-wide Delegation", 1, 0.4, "service-accounts", "google-workspace-apis"],
+  ["dry-run", "Dry Run", 1, 0.45, "cloudflare-infrastructure", "python", "calendar-automation"],
+  ["deliverability", "Deliverability", 1, 0.5, "email-infrastructure", "spf", "dkim", "dmarc", "blacklist-audits"],
+  ["blacklist-audits", "Blacklist Audits", 1, 0.35, "dns", "deliverability"],
+  ["quota-handling", "Quota Handling", 1, 0.4, "calendar-automation", "google-workspace-apis"],
+  ["deduplication", "Deduplication", 1, 0.45, "lead-cleaning", "lead-processing", "csv"],
+  ["batch-processing", "Batch Processing", 1, 0.4, "csv", "python", "google-sheets"],
+  ["human-in-the-loop", "Human-in-the-loop", 1, 0.45, "human-review", "ai-content-engine", "llm-workflows"],
 ]);
 
 export const processes: UniverseItem[] = rows("process", [
@@ -188,6 +215,23 @@ export const processes: UniverseItem[] = rows("process", [
   ["payroll", "Payroll", 1, 0.4, "hr-automation", "denchclaw-hr-crm"],
   ["attendance", "Attendance", 1, 0.4, "hr-automation", "denchclaw-hr-crm", "webinargeek"],
   ["leave-management", "Leave Management", 1, 0.4, "hr-automation", "denchclaw-hr-crm"],
+  ["client-onboarding", "Client Onboarding", 1, 0.5, "requirements-gathering", "persona-definition", "process-mapping"],
+  ["requirements-gathering", "Requirements Gathering", 1, 0.4, "client-onboarding", "process-mapping"],
+  ["process-mapping", "Process Mapping", 1, 0.45, "requirements-gathering", "process-design"],
+  ["persona-definition", "Persona Definition", 1, 0.4, "icp-qualification", "client-onboarding"],
+  ["lead-enrichment", "Lead Enrichment", 1, 0.4, "clay", "lead-cleaning", "lead-processing"],
+  ["calendar-invites", "Calendar Invites", 1, 0.4, "calendar-automation", "google-calendar", "webinar-registration"],
+  ["webinar-reminders", "Webinar Reminders", 1, 0.4, "webinar-automation", "webinar-registration", "gohighlevel"],
+  ["remarketing", "Remarketing", 1, 0.4, "nurture", "webinar-automation", "conversion-analysis"],
+  ["conversion-analysis", "Conversion Analysis", 1, 0.45, "analytics", "webinar-automation", "remarketing"],
+  ["domain-migration", "Domain Migration", 1, 0.4, "namecheap", "cloudflare", "dns"],
+  ["mailbox-setup", "Mailbox Setup", 1, 0.4, "google-workspace", "email-infrastructure"],
+  ["landing-pages", "Landing Pages", 1, 0.4, "cloudflare-pages", "webinar-registration"],
+  ["course-migration", "Course Migration", 1, 0.4, "wordpress", "gohighlevel", "video-editing"],
+  ["video-editing", "Video Editing", 1, 0.35, "premiere", "descript", "riverside", "course-migration"],
+  ["training", "Team Training", 1, 0.45, "technical-documentation"],
+  ["qa-testing", "QA Testing", 1, 0.4, "product-testing", "nextjs"],
+  ["product-feedback", "Product Feedback", 1, 0.4, "product-testing", "qa-testing"],
 ]);
 
 export const capabilities: UniverseItem[] = rows("capability", [
@@ -206,6 +250,9 @@ export const capabilities: UniverseItem[] = rows("capability", [
   ["ai-product-engineering", "AI Product Engineering", 1, 0.45, "nextjs", "openai", "claude-code"],
   ["product-engineering", "Product Engineering", 1, 0.45, "nextjs", "javascript"],
   ["solutions-engineering", "Solutions Engineering", 1, 0.45, "api-integration", "process-design"],
+  ["technical-documentation", "Technical Documentation", 1, 0.5, "github", "process-design", "training"],
+  ["product-testing", "Product Testing", 1, 0.45, "qa-testing", "product-feedback", "nextjs"],
+  ["campaign-optimization", "Campaign Optimization", 1, 0.45, "campaign-management", "analytics", "conversion-analysis"],
 ]);
 
 /** Short technical fragments that drift in the far background (canvas text, no DOM). */

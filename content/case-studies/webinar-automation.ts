@@ -6,11 +6,11 @@ export const webinarAutomation: CaseStudy = {
   eyebrow: "Case study 01 · GTM / Revenue Systems",
   statement: "Turning fragmented webinar operations into one connected acquisition system.",
   seoDescription:
-    "How fragmented webinar operations became one connected system: lead cleaning, outreach, registration, reminders, attendance and CRM follow-up, implemented across 9+ client webinar programs.",
+    "How fragmented webinar operations became one connected system: lead cleaning, outreach, registration, reminders, attendance and CRM follow-up, across 9+ client webinar programs.",
   facts: [
     { label: "Context", value: "Client webinar programs, with client identities kept anonymous where needed" },
-    { label: "Scale", value: "9+ client webinar systems implemented" },
-    { label: "My share", value: "About 90% of the implementation on the major funnel" },
+    { label: "Scale", value: "9+ client webinar systems" },
+    { label: "Role", value: "End to end: the automation, the integrations and the operations around them" },
     { label: "Stack", value: "11 tools, connected by APIs and webhooks" },
   ],
   problem: {

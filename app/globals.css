@@ -207,7 +207,12 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-right: 0.08em;
+  /* the gradient only paints inside the box, so give the overhang room too */
+  padding-inline: 0.14em;
+  margin-inline: -0.14em;
+  /* the italic J drops well below the line box; background-clip: text only paints inside the box */
+  padding-block: 0.12em 0.34em;
+  margin-block: -0.12em -0.34em;
 }
 .grad-text {
   background: var(--grad);
@@ -293,8 +298,11 @@ body {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  padding-bottom: 0.26em;
-  margin-bottom: -0.26em;
+  padding-bottom: 0.5em;
+  margin-bottom: -0.5em;
+  /* italic letters (the J in Joseph) overhang their box; clip the reveal, not the letters */
+  padding-inline: 0.16em;
+  margin-inline: -0.16em;
 }
 .mask-i {
   display: inline-block;
@@ -630,33 +638,6 @@ html.lenis body {
 }
 
 /* Ownership tag */
-.own {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: var(--text-label);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--fg);
-}
-.own::before {
-  content: "";
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--accent-text);
-  flex: none;
-}
-.own[data-level="Led"]::before,
-.own[data-level="Worked with"]::before {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--accent-text);
-}
-.own[data-level="Contributed"]::before {
-  background: linear-gradient(90deg, var(--accent-text) 50%, transparent 50%);
-  box-shadow: inset 0 0 0 1.5px var(--accent-text);
-}
 
 /* ==========================================================================
    CASE-STUDY ENTRY (home) + FLOW STRIP
@@ -1123,71 +1104,77 @@ section[id] {
 }
 
 /* ==========================================================================
-   HERO: centred identity + the Systems Universe (components/universe)
+   HERO: text, portrait, and the Systems Universe floating around them (components/universe)
    ========================================================================== */
-.hero-universe {
-  justify-content: center;
+.hero-text {
+  width: min(100%, 38rem);
 }
-@media (max-width: 639px) {
-  .hero-universe {
-    padding-top: calc(var(--nav-h) + 5rem);
-    padding-bottom: 6rem;
+/* the name stays on one line at every width: the size follows the space it has */
+.hero-name {
+  font-size: min(4rem, 9vw);
+  line-height: 1;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .hero-name {
+    font-size: clamp(2.6rem, 4.3vw, 4rem);
   }
 }
-.hero-center {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+/* the paragraphs fill the text column instead of stopping short of it */
+.hero-text .fs-pos {
+  max-width: none;
+  text-wrap: pretty;
 }
-.hero-core {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 44rem;
-  padding-block: 1rem;
-  pointer-events: auto;
+.hero-lead {
+  max-width: none;
 }
-.hero-core::before {
-  /* a soft dark pool behind the text so anything drifting past stays legible */
+.hero-portrait {
+  position: relative;
+}
+.hero-portrait::before {
+  /* soft violet glow: a plain gradient, far cheaper to paint than a blurred shadow */
   content: "";
   position: absolute;
-  inset: -34% -22%;
-  z-index: -1;
-  background: radial-gradient(closest-side, rgb(7 7 13 / 0.82), rgb(7 7 13 / 0.5) 55%, transparent 100%);
+  inset: -16% -22%;
+  background: radial-gradient(closest-side, rgb(138 133 255 / 0.34), rgb(125 188 255 / 0.1) 55%, transparent 100%);
   pointer-events: none;
 }
-.hero-name {
-  font-size: clamp(3.7rem, 1.4rem + 7.2vw, 7.2rem);
-  line-height: 0.95;
-  text-wrap: balance;
+.hero-portrait .photo {
+  position: relative;
+  border-radius: 26px;
+  background: transparent;
+  box-shadow: none;
 }
-.hero-role {
-  margin-top: 1.6rem;
+.hero-portrait .photo img {
+  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 98%);
+  mask-image: linear-gradient(180deg, #000 60%, transparent 98%);
 }
-.hero-line {
-  margin-top: 1.1rem;
-  max-width: 30em;
-  color: var(--text-on-ink);
-  text-wrap: balance;
+.hero-portrait .photo::after {
+  /* hairline border that fades out with the photo */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgb(236 235 245 / 0.4), rgb(138 133 255 / 0.25) 55%, transparent 95%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
+.hero-portrait .photo-tint {
+  background: linear-gradient(120deg, rgb(138 133 255 / 0.1), transparent 50%);
 }
+.hero-portrait .photo-empty {
+  margin: 1.2rem;
+  border-radius: 20px;
+}
+
 
 .u-layer {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 3;
   overflow: hidden;
   pointer-events: none;
   contain: layout paint;
@@ -1344,8 +1331,8 @@ button.u-item {
 }
 .u-pop[data-dir="below"] { left: var(--pop-x, 0); top: calc(100% + 12px); }
 .u-pop[data-dir="above"] { left: var(--pop-x, 0); bottom: calc(100% + 12px); transform: translateY(-4px); }
-.u-pop[data-dir="left"] { right: calc(100% + 12px); top: 50%; margin-top: -2.5rem; transform: translateX(4px); }
-.u-pop[data-dir="right"] { left: calc(100% + 12px); top: 50%; margin-top: -2.5rem; transform: translateX(-4px); }
+.u-pop[data-dir="left"] { right: calc(100% + 12px); top: 50%; margin-top: var(--pop-y, -2.5rem); transform: translateX(4px); }
+.u-pop[data-dir="right"] { left: calc(100% + 12px); top: 50%; margin-top: var(--pop-y, -2.5rem); transform: translateX(-4px); }
 .u-item.is-active .u-pop,
 .u-item:focus-visible .u-pop {
   opacity: 1;

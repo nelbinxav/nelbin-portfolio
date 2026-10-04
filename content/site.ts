@@ -12,7 +12,7 @@ export const site = {
   currentRole: "AI and Automation Engineer",
   org: "GrowthClub.org",
   positioning:
-    "I build systems that turn repetitive business operations into automated, connected infrastructure.",
+    "I design and build AI systems, automation, APIs, data workflows, internal tools and digital products to solve complex business problems and turn ideas into working systems.",
   /** Shown under the hero headline: where the work happens, not another positioning line. */
   growthLine:
     "From lead generation and CRM workflows to AI systems and infrastructure, I turn fragmented processes into connected workflows.",

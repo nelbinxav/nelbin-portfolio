@@ -35,7 +35,9 @@ export interface SlotRequest {
  * Spreads boxes over the hero without overlapping each other or the central text.
  * Simple iterative relaxation: push overlapping pairs apart, push out of the exclusion rect, pull seeds back.
  */
-export function relax(reqs: SlotRequest[], bounds: Rect, exclusion: Rect, seed = 7, verticalOnly = false): { x: number; y: number }[] {
+export interface Keep { rect: Rect; vertical: boolean }
+
+export function relax(reqs: SlotRequest[], bounds: Rect, keeps: Keep[], seed = 7): { x: number; y: number }[] {
   const rand = rng(seed);
   const pts = reqs.map((r) => {
     if (r.seed) return { x: r.seed.x, y: r.seed.y };
@@ -43,12 +45,12 @@ export function relax(reqs: SlotRequest[], bounds: Rect, exclusion: Rect, seed =
     for (let k = 0; k < 20; k++) {
       const x = bounds.l + rand() * (bounds.r - bounds.l);
       const y = bounds.t + rand() * (bounds.b - bounds.t);
-      if (x < exclusion.l || x > exclusion.r || y < exclusion.t || y > exclusion.b) return { x, y };
+      if (!keeps.some((k) => x > k.rect.l && x < k.rect.r && y > k.rect.t && y < k.rect.b)) return { x, y };
     }
     return { x: bounds.l, y: bounds.t };
   });
-  const padX = 34;
-  const padY = 20;
+  const padX = 46;
+  const padY = 26;
   for (let iter = 0; iter < 180; iter++) {
     for (let i = 0; i < pts.length; i++) {
       for (let j = i + 1; j < pts.length; j++) {
@@ -69,12 +71,15 @@ export function relax(reqs: SlotRequest[], bounds: Rect, exclusion: Rect, seed =
     }
     for (let i = 0; i < pts.length; i++) {
       const p = pts[i], r = reqs[i];
-      // keep the central text clear
-      const el = exclusion.l - r.w / 2, er = exclusion.r + r.w / 2, et = exclusion.t - r.h / 2, eb = exclusion.b + r.h / 2;
-      if (p.x > el && p.x < er && p.y > et && p.y < eb) {
-        const dl = p.x - el, dr = er - p.x, dt = p.y - et, db = eb - p.y;
-        const m = verticalOnly ? Math.min(dt, db) : Math.min(dl, dr, dt, db);
-        if (!verticalOnly && m === dl) p.x = el; else if (!verticalOnly && m === dr) p.x = er; else if (m === dt) p.y = et; else p.y = eb;
+      // keep the text and the portrait clear
+      for (const k of keeps) {
+        const ex = k.rect;
+        const el = ex.l - r.w / 2, er = ex.r + r.w / 2, et = ex.t - r.h / 2, eb = ex.b + r.h / 2;
+        if (p.x > el && p.x < er && p.y > et && p.y < eb) {
+          const dl = p.x - el, dr = er - p.x, dt = p.y - et, db = eb - p.y;
+          const m = k.vertical ? Math.min(dt, db) : Math.min(dl, dr, dt, db);
+          if (!k.vertical && m === dl) p.x = el; else if (!k.vertical && m === dr) p.x = er; else if (m === dt) p.y = et; else p.y = eb;
+        }
       }
       // pull seeded (system) slots back toward where they were meant to be
       if (r.seed) { p.x += (r.seed.x - p.x) * 0.02; p.y += (r.seed.y - p.y) * 0.02; }
@@ -86,12 +91,12 @@ export function relax(reqs: SlotRequest[], bounds: Rect, exclusion: Rect, seed =
 }
 
 /** Evenly spaces boxes of the given widths along a gentle curve; null if they do not fit. */
-export function formationRow(widths: number[], W: number, y: number, amp: number): { x: number; y: number }[] | null {
+export function formationRow(widths: number[], L: number, R: number, y: number, amp: number): { x: number; y: number }[] | null {
   const total = widths.reduce((a, b) => a + b, 0);
-  const span = W * 0.88;
+  const span = (R - L) * 0.92;
   const gap = (span - total) / Math.max(1, widths.length - 1);
   if (gap < 22) return null;
-  let x = (W - span) / 2;
+  let x = L + ((R - L) - span) / 2;
   return widths.map((w, i) => {
     const cx = x + w / 2;
     x += w + gap;
@@ -103,3 +108,13 @@ export const smooth = (v: number, lo: number, hi: number) => {
   const t = Math.min(1, Math.max(0, (v - lo) / (hi - lo)));
   return t * t * (3 - 2 * t);
 };
+
+/** How many cells of the area are free of every keep-out: a cheap way to size the pool to the space available. */
+export function freeArea(bounds: Rect, keeps: Keep[], pad = 20): number {
+  const step = 24;
+  let n = 0;
+  for (let y = bounds.t; y < bounds.b; y += step)
+    for (let x = bounds.l; x < bounds.r; x += step)
+      if (!keeps.some((k) => x > k.rect.l - pad && x < k.rect.r + pad && y > k.rect.t - pad && y < k.rect.b + pad)) n++;
+  return n * step * step;
+}

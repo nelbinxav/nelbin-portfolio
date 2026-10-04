@@ -17,8 +17,8 @@ export interface System {
   /** Plain English first: no jargon in the lead sentence. */
   summary: string;
   context: string[];
+  /** Kept for the Career OS vocabulary (resumes, interviews). Not shown on the public site. */
   ownership: OwnershipLevel;
-  ownershipNote?: string;
   /** Layout tier on the home page: one large feature, a few cards, the rest in a list. */
   tier: "feature" | "card" | "list";
   /** Problem / what I did / result: used by feature and card tiers. */
